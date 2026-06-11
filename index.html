@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            background:#0f172a;
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:40px;
+            overflow:hidden;
+        }
+
+        body::before{
+            content:'';
+            position:absolute;
+            width:350px;
+            height:350px;
+            background:#00e5ff;
+            filter:blur(120px);
+            bottom:-100px;
+            right:-80px;
+            z-index:-1;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            background:#111827;
+            border-radius:25px;
+            padding:35px 60px;
+            gap: 60px;
+            box-shadow:0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:60px;
+        }
+
+        .logo{
+            color:#fff;
+            font-size:28px;
+            font-weight:700;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:30px;
+            list-style:none;
+        }
+
+        .nav-links a{
+            text-decoration:none;
+            color:#fff;
+            font-size:15px;
+            transition:0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active{
+            color:#00e5ff;
+        }
+
+        .hero{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:50px;
+            flex-wrap:wrap;
+        }
+
+        .hero-text{
+            flex:1;
+            min-width:250px;
+        }
+
+        .hero-text h3{
+            color:#fff;
+            font-size:25px;
+            margin-bottom:10px;
+        }
+
+        .hero-text h1{
+            color:#fff;
+            font-size:60px;
+            line-height:1.1;
+            margin-bottom:10px;
+        }
+
+        .hero-text h2{
+            color:#fff;
+            font-size:30px;
+            margin-bottom:20px;
+        }
+
+        .hero-text h2 span{
+            color:#00e5ff;
+        }
+
+        .hero-text p{
+            color:#cbd5e1;
+            font-size:15px;
+            max-width:550px;
+            line-height:1.8;
+            margin-bottom:30px;
+        }
+
+        .social-icons{
+            display:flex;
+            gap:10px;
+            margin-bottom:30px;
+        }
+
+        .social-icons a{
+            width:45px;
+            height:45px;
+            border:2px solid #00e5ff;
+            border-radius:50%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            color:#00e5ff;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        .social-icons a:hover{
+            background:#00e5ff;
+            color:#111827;
+            transform:translateY(-5px);
+        }
+
+        .btn{
+            display:inline-block;
+            padding:14px 35px;
+            background:#00e5ff;
+            color:#111827;
+            text-decoration:none;
+            border-radius:30px;
+            font-weight:600;
+            box-shadow:0 0 15px #00e5ff;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            transform:scale(1.05);
+        }
+
+        .hero-image{
+            flex:1;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-width:300px;
+        }
+
+        .hexagon{
+            width:350px;
+            height:360px;
+            background:#00e5ff;
+            clip-path:polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0 50%);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            box-shadow:0 0 30px #00e5ff;
+        }
+
+        .hexagon img{
+            width:95%;
+            height:95%;
+            object-fit:cover;
+            clip-path:polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0 50%);
+        }
+
+        @media(max-width:900px){
+            .container{
+                padding:30px;
+            }
+
+            .hero{
+                flex-direction:column-reverse;
+                text-align:center;
+            }
+
+            .hero-text h1{
+                font-size:30px;
+            }
+
+            .hero-text h2{
+                font-size:24px;
+            }
+
+            .social-icons{
+                justify-content:center;
+            }
+
+            .navbar{
+                flex-direction:column;
+                gap:20px;
+            }
+
+            .nav-links{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <nav class="navbar">
+            <div class="logo"> My Portfolio</div>
+
+            <ul class="nav-links">
+                <li><a href="Home.html" class="active">Home</a></li>
+                <li><a href="AboutMe.html">About</a></li>
+                <li><a href="Certificates.html">Achievements</a></li>
+                <li><a href="Contacts.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section class="hero">
+
+            <div class="hero-text">
+                <h3>Hello, It's Me</h3>
+                <h1>Cyndara Mae Omila</h1>
+                <h2>I'm <span>a 4th yr IS Student</span></h2>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/cyndaramaederla.omila/" target="_blank"><i class="fab fa-facebook-f"></i></a> 
+                <a href="https://www.instagram.com/aradnyc/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@aradnyc" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://t.me/cyndaraomila" target="_blank"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.linkedin.com/in/omila-cyndara-mae-a01844311/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+                 <a href="About Me.html" class="btn">See more Info.</a>
+            </div>
+
+            <div class="hero-image">
+                <div class="hexagon">
+                    <img src="dara.png" alt="dara">
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+</html>
+
+
+
