@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Contact Section</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      width:100%;
+      min-height:100vh;
+      background:#050816;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:30px;
+      overflow:auto;
+    }
+
+    /* MAIN CONTAINER */
+
+    .container{
+      width:1100px;
+      min-height:560px;
+      background:#0b1224;
+
+      border-radius:28px;
+
+      border:1px solid rgba(0,255,255,0.15);
+
+      box-shadow:
+      0 0 20px rgba(0,255,255,0.18),
+      0 0 50px rgba(0,255,255,0.08);
+
+      padding:40px 55px;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:45px;
+    }
+
+    .logo{
+      color:#fff;
+      font-size:26px;
+      font-weight:700;
+    }
+
+    .logo span{
+      color:#00eaff;
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      color:#fff;
+      text-decoration:none;
+      font-size:13px;
+      transition:.3s;
+    }
+
+    nav ul li a:hover{
+      color:#00eaff;
+    }
+
+    .active{
+      color:#00eaff;
+    }
+
+    /* CONTENT */
+
+    .content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:50px;
+    }
+
+    /* LEFT */
+
+    .left{
+      width:45%;
+    }
+
+    .left h4{
+      color:#00eaff;
+      font-size:22px;
+      margin-bottom:10px;
+      font-weight:600;
+    }
+
+    .left h1{
+      color:#fff;
+      font-size:52px;
+      line-height:1.1;
+      margin-bottom:22px;
+      font-weight:700;
+    }
+
+    .left h1 span{
+      color:#00eaff;
+    }
+
+    .left p{
+      color:#b9c1d9;
+      font-size:15px;
+      line-height:1.8;
+      margin-bottom:35px;
+      width:90%;
+    }
+
+    /* INFO SECTION */
+
+    .info{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .info-box{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .icon{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      border:2px solid #00eaff;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      color:#00eaff;
+      font-size:16px;
+
+      box-shadow:
+      0 0 12px rgba(0,255,255,0.5);
+    }
+
+    .text h3{
+      color:#fff;
+      font-size:18px;
+      margin-bottom:2px;
+    }
+
+    .text span{
+      color:#c2c9dd;
+      font-size:13px;
+    }
+
+    /* RIGHT SIDE */
+
+    .right{
+      width:50%;
+      display:flex;
+      justify-content:center;
+    }
+
+    .form-box{
+      width:100%;
+      max-width:470px;
+
+      padding:30px;
+
+      border-radius:22px;
+
+      border:2px solid #00eaff;
+
+      box-shadow:
+      0 0 18px rgba(0,255,255,0.45),
+      inset 0 0 12px rgba(0,255,255,0.08);
+    }
+
+    .row{
+      display:flex;
+      gap:15px;
+      margin-bottom:15px;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      background:transparent;
+
+      border:1px solid rgba(255,255,255,0.12);
+
+      padding:13px;
+
+      border-radius:10px;
+
+      outline:none;
+
+      color:#fff;
+      font-size:13px;
+    }
+
+    textarea{
+      height:120px;
+      resize:none;
+      margin-bottom:20px;
+    }
+
+    input::placeholder,
+    textarea::placeholder{
+      color:#8f98b2;
+    }
+
+    /* BUTTON */
+
+    .btn{
+      background:#00eaff;
+      color:#000;
+
+      border:none;
+      outline:none;
+
+      padding:13px 28px;
+
+      border-radius:10px;
+
+      font-size:14px;
+      font-weight:600;
+
+      cursor:pointer;
+
+      box-shadow:
+      0 0 18px rgba(0,255,255,0.6);
+
+      transition:.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+
+      box-shadow:
+      0 0 28px rgba(0,255,255,0.8);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1000px){
+
+      body{
+        padding:20px;
+      }
+
+      .container{
+        width:100%;
+        padding:35px;
+      }
+
+      .content{
+        flex-direction:column;
+      }
+
+      .left,
+      .right{
+        width:100%;
+      }
+
+      .left h1{
+        font-size:42px;
+      }
+
+      .row{
+        flex-direction:column;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      nav ul{
+        gap:20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+      <div class="logo">
+        Portfolio<span>.</span>
+      </div>
+
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="About Me.html">About</a></li>
+        <li><a href="Certificates.html">Achievements</a></li>
+        <li><a href="Contacts.html" class="active">Contact</a></li>
+      </ul>
+
+    </nav>
+
+    <!-- CONTENT -->
+
+    <div class="content">
+
+      <!-- LEFT SIDE -->
+
+      <div class="left">
+
+        <h4>Get In Touch</h4>
+
+        <h1>
+          Let's Work <br>
+          <span>Together!</span>
+        </h1>
+
+        <p>
+          I'm always open to discussing new projects,
+          creative ideas or opportunities to be part
+          of your visions.
+        </p>
+
+        <div class="info">
+
+          <!-- EMAIL -->
+
+          <div class="info-box">
+
+            <div class="icon">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+
+            <div class="text">
+              <h3>Email</h3>
+              <span>cyndaraomila@gmail.com</span>
+            </div>
+
+          </div>
+
+          <!-- PHONE -->
+
+          <div class="info-box">
+
+            <div class="icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+
+            <div class="text">
+              <h3>Phone</h3>
+              <span>09515737744</span>
+            </div>
+
+          </div>
+
+          <!-- LOCATION -->
+
+          <div class="info-box">
+
+            <div class="icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div class="text">
+              <h3>Location</h3>
+              <span>Mangalcal,Carmen Philippines</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE -->
+
+      <div class="right">
+
+        <div class="form-box">
+
+          <div class="row">
+
+            <input
+            type="text"
+            placeholder="Your Name">
+
+            <input
+            type="email"
+            placeholder="Your Email">
+
+          </div>
+
+          <input
+          type="text"
+          placeholder="Subject"
+          style="margin-bottom:15px;">
+
+          <textarea placeholder="Message"></textarea>
+
+          <button class="btn">
+            Send Message
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
