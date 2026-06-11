@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Achievements Portfolio</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#060b16;
+    min-height:100vh;
+    overflow-x:hidden;
+    padding:30px 60px;
+    color:#fff;
+}
+
+/* BACKGROUND GLOW */
+body::before{
+    content:'';
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:#00e5ff;
+    filter:blur(140px);
+    right:-120px;
+    bottom:-120px;
+    opacity:.5;
+    z-index:-1;
+}
+
+/* NAVBAR */
+.navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:50px;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#fff;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+    color:#00e5ff;
+}
+
+/* HERO SECTION */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+/* LEFT SIDE */
+.hero-text{
+    flex:1;
+    min-width:320px;
+}
+
+.tag{
+    color:#00e5ff;
+    font-size:30px;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.hero-text h1{
+    font-size:60px;
+    line-height:1.1;
+    margin-bottom:18px;
+}
+
+.hero-text h1 span{
+    color:#00e5ff;
+}
+
+.hero-text p{
+    color:#b6c2d1;
+    line-height:1.8;
+    max-width:550px;
+    margin-bottom:40px;
+    font-size:15px;
+}
+
+/* STATS */
+.stats{
+    display:flex;
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+.stat-box{
+    text-align:center;
+    min-width:110px;
+}
+
+.stat-box i{
+    font-size:35px;
+    color:#00e5ff;
+    margin-bottom:12px;
+    text-shadow:0 0 15px #00e5ff;
+}
+
+.stat-box h2{
+    font-size:30px;
+    margin-bottom:5px;
+}
+
+.stat-box p{
+    color:#b6c2d1;
+    font-size:14px;
+}
+
+/* RIGHT SIDE */
+.gallery-wrapper{
+    flex:1;
+    min-width:320px;
+    display:flex;
+    justify-content:center;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,170px);
+    gap:18px;
+}
+
+/* PHOTO BOX */
+.photo-box{
+    position:relative;
+    border-radius:22px;
+    overflow:hidden;
+    border:2px solid #00e5ff;
+    box-shadow:0 0 18px rgba(0,229,255,.5);
+    transition:.4s;
+    background:#111827;
+    display:block;
+}
+
+.photo-box:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 0 28px #00e5ff;
+}
+
+.photo-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* BOX SIZES */
+.large{
+    grid-column:span 2;
+    grid-row:span 2;
+    height:360px;
+}
+
+.small{
+    height:170px;
+}
+
+/* GALLERY SECTION */
+.bottom-gallery{
+    margin-top:70px;
+}
+
+.gallery-title{
+    color:#00e5ff;
+    margin-bottom:25px;
+    font-size:20px;
+}
+
+.gallery-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.gallery-card{
+    background:#101827;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.4s;
+}
+
+.gallery-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 18px rgba(0,229,255,.5);
+}
+
+.gallery-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:18px;
+}
+
+.card-content h3{
+    margin-bottom:8px;
+    font-size:18px;
+}
+
+.card-content p{
+    color:#b6c2d1;
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:13px 32px;
+    background:#00e5ff;
+    color:#06111d;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 0 18px rgba(0,229,255,.5);
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,160px);
+    }
+
+    .large{
+        height:320px;
+    }
+}
+
+@media(max-width:900px){
+
+    body{
+        padding:25px;
+    }
+
+    .hero{
+        flex-direction:column;
+    }
+
+    .hero-text{
+        text-align:center;
+    }
+
+    .hero-text p{
+        margin:auto;
+        margin-bottom:30px;
+    }
+
+    .stats{
+        justify-content:center;
+    }
+
+    .hero-text h1{
+        font-size:45px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,150px);
+    }
+
+    .large{
+        height:300px;
+    }
+
+    .navbar{
+        justify-content:center;
+    }
+}
+
+@media(max-width:600px){
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .large{
+        grid-column:span 1;
+        height:260px;
+    }
+
+    .small{
+        height:220px;
+    }
+
+    .hero-text h1{
+        font-size:36px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+
+    <div class="logo">My Portfolio</div>
+
+    <ul class="nav-links">
+        <li><a href="Home.html" class="active">Home</a></li>
+        <li><a href="About Me.html">About</a></li>
+        <li><a href="Certificates.html">Achievements</a></li>
+        <li><a href="Contacts.html">Contact</a></li>
+    </ul>
+
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <!-- LEFT SIDE -->
+    <div class="hero-text">
+
+        <div class="tag">My Achievements</div>
+
+        <h1>
+            Moments Of
+            <span>Achievement</span>
+        </h1>
+
+        <p>
+            A collection of my accomplishments, awards, and recognition
+            that reflect my journey, dedication, and passion for excellence.
+        </p>
+
+        <!-- ICON STATS -->
+        <div class="stats">
+
+            <div class="stat-box">
+                <i class="fa-solid fa-trophy"></i>
+                <h2>12+</h2>
+                <p>Awards</p>
+            </div>
+
+            <div class="stat-box">
+                <i class="fa-solid fa-medal"></i>
+                <h2>8+</h2>
+                <p>Certificates</p>
+            </div>
+
+            <div class="stat-box">
+                <i class="fa-solid fa-star"></i>
+                <h2>15+</h2>
+                <p>Recognition</p>
+            </div>
+
+            <div class="stat-box">
+                <i class="fa-solid fa-award"></i>
+                <h2>5+</h2>
+                <p>Competitions</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="gallery-wrapper">
+
+        <div class="gallery-grid">
+
+           
+            <!-- CLICKABLE PHOTOS -->
+
+
+            <a href="ojt.png" target="_blank" class="photo-box small">
+                <img src="ojt.png">
+            </a>
+
+            <a href="" target="_blank" class="photo-box large">
+                <img src="byte24.jpg">
+            </a>
+
+            <a href="psits.jpg" target="_blank" class="photo-box small">
+                <img src="psits.jpg">
+            </a>
+
+            <a href="pasundayag.jpg"_blank" class="photo-box small">
+                <img src="pasundayag.jpg">
+            </a>
+
+            <a href="byte244.jpg"_blank" class="photo-box small">
+                <img src="byte244.jpg">
+            </a>
+
+            <a href="mental.png"_blank" class="photo-box small">
+                <img src="mental.png">
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BOTTOM GALLERY -->
+<section class="bottom-gallery">
+
+    <h2 class="gallery-title">• My Achievement Gallery</h2>
+
+    <div class="gallery-row">
+
+        <div class="gallery-card">
+            <img src="ojt.png">
+            <img src="py1.jpg">
+            <img src="Tes1.jpg">
+
+            <div class="card-content">
+                <h3>Certificates</h3>
+                <p>Participated in skill-based trainings, seminars, and IT certifications, including Python and TESDA, as well as the Certification of Completion for OJT. These experiences enhanced technical knowledge and professional development, strengthening practical skills aligned with our course.</p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="Pasundayag.jpg">
+            <img src="Pasudayag1.jpg">
+            <img src="pasun.jpg">
+
+            <div class="card-content">
+                <h3>Pasundayag</h3>
+                <p>Pasundayag is part of our required activities in the Entrepreneurship and HCI courses during our 3rd year. In this event, we developed innovative and responsive systems related to the Blue Economy, showcasing creativity, technical skills, and sustainable technology solutions.</p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="ptik1.jpg">
+            <img src="psmodern.jpg">
+            <img src="kali25.jpg">
+
+
+
+            <div class="card-content">
+                <h3>PSITS</h3>
+                <p>Represented DNSC as an IT/IS student in interschool PSITS events from 1st year to 4th year, actively participating in dance performances and collaborative activities that promoted teamwork, leadership, and school pride.</p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="byte24.jpg">
+             <img src="kali25.jpg">
+              <img src="pop24.jpg">
+
+
+
+
+            <div class="card-content">
+                <h3>Kalibulung</h3>
+                <p>Participated in Kalibulung dance events from 1st year to 4th year, demonstrating consistency, teamwork, discipline, and cultural appreciation through creative and energetic performances.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="Contacts.html" class="btn">See my contacts</a>
+
+</section>
+
+</body>
+</html>
